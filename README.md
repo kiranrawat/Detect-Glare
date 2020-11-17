@@ -17,7 +17,7 @@ conda activate glarenv
 pip install -r requirements.txt
 
 ## Start the server
-Run the following command to start the server:
+Run the following command to start the server: <br>
 python run.py <br>
 The server will start on the address http://127.0.0.1:5000 [if port 5000 is not occupied]
 
