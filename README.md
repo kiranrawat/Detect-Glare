@@ -10,7 +10,7 @@ direction of forward- facing camera) is less than 30 degrees AND
 Please follow the steps below to setup the environment and calling the api.
 
 ## Create a conda environment
-conda create --name glarenv
+conda create --name glarenv <br>
 conda activate glarenv
 
 ## Install libraries
