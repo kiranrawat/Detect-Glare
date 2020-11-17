@@ -1,7 +1,7 @@
 import astropy.coordinates as SkyCoord
 import astropy.units as u
 from astropy.time import Time
-# from astropy.utils import iers
+from astropy.utils import iers
 
 # constants
 AZIMUTHAL_DIFF_LIMIT = 30
@@ -12,7 +12,7 @@ class CoordinatesUtils():
     """
     This class is created to compute glare detection
     """
-    def __init__(self, date_utils, lat, long, epoch, orientation):
+    def __init__(self, date_utils, lat, lon, epoch, orientation):
         try:
             # set mirror for astropy library
             # iers.Conf.iers_auto_url.set('ftp://cddis.gsfc.nasa.gov/pub/products/iers/finals2000A.all')
@@ -21,8 +21,9 @@ class CoordinatesUtils():
             self.date_utils = date_utils
 
             # set location and datetime of the picture in astropy format
-            self.image_location = SkyCoord.EarthLocation(lat=lat * u.deg, lon=long * u.deg)
+            self.image_location = SkyCoord.EarthLocation(lat=lat * u.deg, lon=lon * u.deg)
             self.image_datetime = Time(self.date_utils.fetch_utc_datetime(epoch))
+            
             # default values
             self.azimuth = 0
             self.altitude = 0
@@ -54,10 +55,10 @@ class CoordinatesUtils():
             self.__calculate_azimuth_and_altitude()
 
             # convert orientation to [0-360] degree format
-            temp_orientation = (self.orientation + 360) % 360         
+            orientation_deg = (self.orientation + 360) % 360         
 
             # compute the minimum difference between azimuth and orientation
-            phi = abs(self.azimuth - temp_orientation) % 360 
+            phi = abs(self.azimuth - orientation_deg) % 360 
             if (phi > 180):
                 azimuth_distance = 360 - phi
             else:
