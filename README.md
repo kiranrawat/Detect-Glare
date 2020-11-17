@@ -16,7 +16,13 @@ conda activate glarenv
 pip install -r requirements.txt
 
 ## Start the server
+<<<<<<< HEAD
 Start flask rest server (rest server run on localhost:5000): `python run.py`
+=======
+Run the following command to start the server: <br>
+python run.py <br>
+The server will start on the address http://127.0.0.1:5000 [if port 5000 is not occupied]
+>>>>>>> 09d2dc425af0786f20ad7ad69461fb014ffe8619
 
 ## Call REST API
 Open a terminal in Linux and type the following command:
