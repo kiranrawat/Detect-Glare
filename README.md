@@ -14,7 +14,7 @@ conda create --name glarenv <br>
 conda activate glarenv
 
 ## Install libraries
-conda install -r requirement.txt
+pip install -r requirements.txt
 
 ## Start the server
 Run the following command to start the server:
