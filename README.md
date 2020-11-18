@@ -6,7 +6,7 @@ Flask based restful api that process the metadata requests and determines if the
 direction of forward- facing camera) is less than 30 degrees AND <br>
 2. Altitude of the sun is less than 45 degrees.
 
-## Please follow the steps below to setup the environment,calling and testing the rest api.
+Please follow the steps below to setup the environment,calling and testing the rest api.
 
 ## Create a conda environment
 conda create --name glarenv <br>
