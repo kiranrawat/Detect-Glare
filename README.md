@@ -8,6 +8,10 @@ direction of forward- facing camera) is less than 30 degrees AND <br>
 
 Please follow the steps below to setup the environment,calling and testing the rest api.
 
+## Assumption
+
+I have not considered negative altitudes as glare because a negative value means below the horizon, so the sun wouldn't even be there to have a glare condition.
+
 ## Create a conda environment
 conda create --name glarenv <br>
 conda activate glarenv
@@ -28,3 +32,4 @@ curl -H "Content-Type: application/json" -X POST -d '{"lat": 49.2699648, "lon": 
 
 1. Start flask rest server (rest server run on localhost:5000): `python run.py` <br>
 2. Run unittest: `python rest_tester.py`
+
